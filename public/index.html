@@ -1,79 +1,197 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Muhammad Shafique | Web Developer</title>
-<meta name="description" content="Muhammad Shafique builds WordPress websites, WooCommerce stores and custom PHP applications. View projects or get in touch by WhatsApp.">
-<meta name="theme-color" content="#f6f9f8">
-<link rel="stylesheet" href="/style.css">
-<script type="module" src="/site.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Muhammad Shafique | Web Developer</title>
+  <meta name="description" content="Muhammad Shafique builds and maintains WordPress websites, WooCommerce stores, and custom PHP applications. View live projects or get in touch.">
+  <meta name="theme-color" content="#0F2A3D">
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/site.js"></script>
 </head>
 <body class="portfolio-page">
-<a class="skip" href="#main">Skip to content</a>
-<header class="profile-rail" aria-label="Site header">
-  <a class="rail-profile" href="#home">
-    <img src="/portrait.webp" width="1050" height="1050" alt="">
-    <span><strong>Muhammad Shafique</strong><small>Web Developer</small></span>
-  </a>
-  <button id="menu-toggle" class="button outline menu-toggle" type="button" aria-controls="rail-panel" aria-expanded="false" hidden>Menu</button>
-  <div class="rail-panel" id="rail-panel">
-    <nav class="rail-nav" aria-label="Main navigation">
-      <a href="#home" aria-current="location">Home</a>
-      <a href="#work">Portfolio</a>
-      <a href="#about">About</a>
-      <a href="/Muhammad-Shafique-CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="rail-links">
-      <a href="https://wa.me/923007507115" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
-      <a href="https://www.linkedin.com/in/muhammad-shafique-webdev/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-    </div>
-  </div>
-</header>
-<main id="main">
-<section class="hero wrap" id="home">
-<div class="hero-copy">
-<h1>Muhammad Shafique<span>Web Developer</span></h1>
-<p class="intro">I build WordPress websites, WooCommerce stores, and custom PHP applications, and help businesses keep them running after launch.</p>
-<div class="actions"><a class="button primary" href="#work">View my work <span aria-hidden="true">↓</span></a><a class="button outline" href="/Muhammad-Shafique-CV.pdf" download>Download CV</a></div>
-<div class="hero-links"><a href="#contact">Get in touch ↗</a></div>
-</div>
+  <a class="skip" href="#main">Skip to content</a>
 
-</section>
-<section id="work" class="work section"><div class="wrap">
-<div class="section-header"><div><h2>Selected work<span>.</span></h2><p>Browse online stores, service websites, and specialist projects.</p></div><span id="total" class="total"></span></div>
-<div class="toolbar"><div id="filters" class="filters" aria-label="Project categories"></div><label class="search"><span class="sr-only">Search projects</span><input type="search" id="search" placeholder="Search projects"></label></div>
-<p id="results" role="status" class="result"></p><div id="projects" class="projects"></div>
-<noscript>Enable JavaScript to browse the projects.</noscript>
-</div></section>
-<section id="about" class="section"><div class="wrap about">
-<div><p class="eyebrow">About me</p><h2>Developer.<br><em>Engineer.</em></h2></div>
-<div><p class="wide">My background is in electrical and computer engineering. Today I develop websites and business applications, manage hosting and maintenance, and coordinate with designers, developers, and SEO specialists.</p>
-<dl class="services">
-<div><dt>Websites &amp; stores</dt><dd>WordPress, Elementor, WooCommerce, product catalogues</dd></div>
-<div><dt>Hosting &amp; support</dt><dd>cPanel, migrations, backups, EPOS stock sync with Slynk</dd></div>
-<div><dt>Custom applications</dt><dd>PHP business tools, including an accounting application</dd></div>
-</dl></div></div></section>
-<section id="contact" class="contact section"><div class="wrap contact-grid">
-<div><p class="eyebrow">Get in touch</p><h2>Tell me what<br>you’re building<span>.</span></h2><a class="button primary" href="https://wa.me/923007507115" target="_blank" rel="noopener noreferrer">Message on WhatsApp ↗</a></div>
-<address>
-<a href="tel:+923007507115"><span>Phone &amp; WhatsApp</span><strong>+92 300 7507115</strong></a>
-<a href="mailto:engr.shafiq057@gmail.com"><span>Email</span><strong>engr.shafiq057@gmail.com</strong></a>
-<a href="https://www.linkedin.com/in/muhammad-shafique-webdev/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>Muhammad Shafique ↗</strong></a>
-</address>
-</div></section>
-</main>
-<footer class="footer"><div class="wrap"><span>Muhammad Shafique</span><a href="/admin">Admin sign-in</a></div></footer>
-<template id="project-template">
-<article class="card">
-<a class="card-link" target="_blank" rel="noopener noreferrer">
-<div class="card-art" aria-hidden="true"><span class="cover-mark"></span></div>
-<div class="card-copy">
-<p class="category"></p><h3></h3><p class="description"></p><div class="tags"></div>
-<div class="card-bottom"><span class="domain"></span><span class="visit">Visit site ↗</span></div>
-</div>
-</a>
-</article>
-</template>
-</body></html>
+  <header class="site-header" aria-label="Site header">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">
+        <span class="brand-badge">MS</span>
+        <span class="brand-text">
+          <strong>Muhammad Shafique</strong>
+          <small>Web Developer</small>
+        </span>
+      </a>
+
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-controls="rail-panel" aria-expanded="false" hidden>
+        Menu
+      </button>
+
+      <div class="rail-panel" id="rail-panel">
+        <nav class="rail-nav" aria-label="Main navigation">
+          <a href="#home" aria-current="location">Home</a>
+          <a href="#work">Portfolio</a>
+          <a href="#about">About</a>
+          <a href="/Muhammad-Shafique-CV.pdf" download>CV ↓</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="nav-link-ext" href="https://www.linkedin.com/in/muhammad-shafique-webdev/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="button primary sm" href="https://wa.me/923007507115" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="status-pill">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Available &middot; Remote (UK / US / PK) &middot; Multan / Lahore
+          </div>
+          <h1>Websites Built to <span>Perform</span> &amp; Easy to Maintain.</h1>
+          <p class="intro">
+            WordPress, WooCommerce &amp; Custom PHP Developer helping UK and global businesses launch fast, stay updated, and grow online.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#work">Explore Live Work ↓</a>
+            <a class="button ghost" href="/Muhammad-Shafique-CV.pdf" download>Download CV</a>
+            <a class="button ghost" href="https://www.linkedin.com/in/muhammad-shafique-webdev/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-bar">
+            <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <span class="bar-label">Developer Profile</span>
+          </div>
+          <div class="hero-profile-row">
+            <img class="hero-portrait" src="/portrait.webp" width="1050" height="1050" alt="Muhammad Shafique">
+            <div>
+              <h2>Muhammad Shafique</h2>
+              <p>Web Developer &amp; Technical Coordinator</p>
+              <span class="exp-badge">UK Remote Agency Experience</span>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-box">
+              <strong id="hero-count">18+</strong>
+              <span>Live Client &amp; Niche Sites</span>
+            </div>
+            <div class="stat-box">
+              <strong>End-to-End</strong>
+              <span>Build, Hosting &amp; Maintenance</span>
+            </div>
+          </div>
+          <div class="hero-stack">
+            <span>WordPress</span>
+            <span>WooCommerce</span>
+            <span>Elementor</span>
+            <span>cPanel / Hostinger</span>
+            <span>EPOS &amp; Slynk</span>
+            <span>Custom PHP</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="work section">
+      <div class="wrap">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Portfolio Showcase</p>
+            <h2>Selected Work<span>.</span></h2>
+          </div>
+          <span id="total" class="total"></span>
+        </div>
+
+        <div class="toolbar">
+          <div id="filters" class="filters" aria-label="Project categories"></div>
+          <label class="search">
+            <span class="sr-only">Search projects</span>
+            <input type="search" id="search" placeholder="Search site, category, or skill...">
+          </label>
+        </div>
+
+        <p id="results" role="status" class="result"></p>
+        <div id="projects" class="projects"></div>
+        <noscript>Enable JavaScript to browse the projects.</noscript>
+      </div>
+    </section>
+
+    <section id="about" class="about-section section">
+      <div class="wrap about-grid">
+        <div>
+          <p class="eyebrow">Capabilities</p>
+          <h2>Developer.<br><em>Engineer.</em></h2>
+          <p class="wide">
+            Electrical &amp; Computer Engineer turned Web Developer—bringing structured problem-solving to websites, e-commerce stores, hosting, and remote team coordination.
+          </p>
+        </div>
+        <div class="service-cards">
+          <article class="service-card">
+            <h3>WordPress &amp; WooCommerce</h3>
+            <p>Business websites, online stores, Elementor builds, product catalogues, and niche/blogging portals.</p>
+          </article>
+          <article class="service-card">
+            <h3>Hosting &amp; EPOS Sync</h3>
+            <p>cPanel &amp; Hostinger management, DNS, migrations, backups, content updates, and EPOS/Slynk stock sync.</p>
+          </article>
+          <article class="service-card">
+            <h3>Custom PHP &amp; Coordination</h3>
+            <p>Internal business web applications using AI-assisted workflows, on-page SEO, and remote team delivery.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="eyebrow">Get in Touch</p>
+          <h2>Let&rsquo;s build something <span>reliable.</span></h2>
+          <p class="contact-sub">Available immediately for Remote (any shift) as well as Multan and Lahore opportunities.</p>
+          <div class="actions">
+            <a class="button primary" href="https://wa.me/923007507115" target="_blank" rel="noopener noreferrer">Message on WhatsApp ↗</a>
+            <a class="button ghost" href="mailto:engr.shafiq057@gmail.com">Send Email</a>
+          </div>
+        </div>
+        <address class="contact-list">
+          <a href="tel:+923007507115"><span>Phone &amp; WhatsApp</span><strong>+92 300 7507115</strong></a>
+          <a href="mailto:engr.shafiq057@gmail.com"><span>Email</span><strong>engr.shafiq057@gmail.com</strong></a>
+          <a href="https://www.linkedin.com/in/muhammad-shafique-webdev/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>linkedin.com/in/muhammad-shafique-webdev ↗</strong></a>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>Muhammad Shafique &middot; Remote (PK / UK / US) &middot; Multan / Lahore</span>
+      <a href="/admin">Admin sign-in</a>
+    </div>
+  </footer>
+
+  <template id="project-template">
+    <article class="card">
+      <a class="card-link" target="_blank" rel="noopener noreferrer">
+        <div class="card-browser">
+          <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+          <span class="domain"></span>
+        </div>
+        <div class="card-image-wrap" hidden></div>
+        <div class="card-copy">
+          <p class="category"></p>
+          <h3></h3>
+          <p class="description"></p>
+          <div class="tags"></div>
+          <div class="card-bottom">
+            <span class="visit">Visit Live Site ↗</span>
+          </div>
+        </div>
+      </a>
+    </article>
+  </template>
+</body>
+</html>

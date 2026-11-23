@@ -14,26 +14,26 @@ function renderProjects() {
   result.textContent = matches.length ? `Showing ${matches.length} of ${projects.length} projects` : 'No projects match your filters.';
   grid.replaceChildren(...matches.map(project => {
     const card = template.content.firstElementChild.cloneNode(true);
+    card.dataset.cat = project.category;
     const link = card.querySelector('a');
     link.href = project.url;
     link.setAttribute('aria-label', `Visit ${project.name} (opens in a new tab)`);
     card.querySelector('h3').textContent = project.name;
-    card.querySelector('.domain').textContent = new URL(project.url).hostname;
+    card.querySelector('.domain').textContent = new URL(project.url).hostname.replace(/^www\./, '');
     card.querySelector('.category').textContent = project.category;
     card.querySelector('.description').textContent = project.description;
-    const art = card.querySelector('.card-art');
-    const coverMark = art.querySelector('.cover-mark');
-    coverMark.textContent = project.name.split(/\s+/u).slice(0, 2)
-      .map(word => Array.from(word)[0]).join('').toUpperCase();
+
+    const imgWrap = card.querySelector('.card-image-wrap');
     if (project.image) {
       const image = document.createElement('img');
-      image.alt = '';
+      image.alt = project.name;
       image.loading = 'lazy';
-      image.addEventListener('load', () => { coverMark.hidden = true; });
+      image.addEventListener('load', () => { imgWrap.hidden = false; });
       image.addEventListener('error', () => image.remove());
       image.src = project.image;
-      art.prepend(image);
+      imgWrap.append(image);
     }
+
     for (const tag of project.tags) {
       const label = document.createElement('span');
       label.textContent = tag;
@@ -47,10 +47,14 @@ async function loadProjects() {
   const response = await fetch('/api/projects');
   if (!response.ok) throw new Error('Could not load projects.');
   projects = await response.json();
-  document.querySelector('#total').textContent = `${projects.length} projects`;
+  document.querySelector('#total').textContent = `${projects.length} live websites`;
+  const heroCount = document.querySelector('#hero-count');
+  if (heroCount) heroCount.textContent = `${projects.length}+`;
+
   for (const name of ['', ...new Set(projects.map(project => project.category))]) {
     const button = document.createElement('button');
-    button.textContent = name || 'All work';
+    const count = name ? projects.filter(p => p.category === name).length : projects.length;
+    button.textContent = name ? `${name} (${count})` : `All (${count})`;
     button.setAttribute('aria-pressed', String(!name));
     button.addEventListener('click', () => {
       category = name;
@@ -65,11 +69,11 @@ async function loadProjects() {
 
 loadProjects().catch(() => { result.textContent = 'Projects are temporarily unavailable.'; });
 
-const rail = document.querySelector('.profile-rail');
+const rail = document.querySelector('.site-header');
 const menuToggle = document.querySelector('#menu-toggle');
-const mobile = window.matchMedia('(max-width: 860px)');
+const mobile = window.matchMedia('(max-width: 760px)');
 const sectionLinks = Array.from(rail.querySelectorAll('.rail-nav a[href^="#"]'));
-const sections = sectionLinks.map(link => ({ link, section: document.querySelector(link.hash) }));
+const sections = sectionLinks.map(link => ({ link, section: document.querySelector(link.hash) })).filter(s => s.section);
 
 function closeMenu() {
   menuToggle.setAttribute('aria-expanded', 'false');
@@ -95,13 +99,11 @@ rail.addEventListener('click', event => {
   const link = event.target.closest('a[href^="#"]');
   if (!link || menuToggle.getAttribute('aria-expanded') !== 'true') return;
   closeMenu();
-  const section = document.querySelector(link.hash);
-  section.setAttribute('tabindex', '-1');
-  section.focus({ preventScroll: true });
 });
 
 function updateCurrentSection() {
-  const headerOffset = mobile.matches ? rail.offsetHeight + 28 : 112;
+  if (!sections.length) return;
+  const headerOffset = 100;
   const atEnd = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
   let current = sections[0];
   for (const item of sections) {
