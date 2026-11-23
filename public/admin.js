@@ -20,7 +20,7 @@ async function api(payload) {
   } : {});
   const data = await response.json().catch(() => null);
   if (!response.ok) {
-    const issue = new Error(data?.error ?? 'The admin service is unavailable.');
+    const issue = new Error(data?.error ?? (response.status === 404 ? 'The admin API route is missing. Deploy the full repository, including the api folder and vercel.json.' : 'The admin service is unavailable. Check the Vercel deployment logs.'));
     issue.status = response.status;
     throw issue;
   }
@@ -142,6 +142,9 @@ logout.onclick = async () => {
 };
 
 openDashboard().catch(issue => {
-  if (issue.status === 401) showLogin();
-  else handleIssue(issue);
+  if (issue.status === 401) {
+    showLogin();
+  } else {
+    handleIssue(issue);
+  }
 });

@@ -1,17 +1,25 @@
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { extname } from 'node:path';
-import api from './api/projects.js';
+import { fileURLToPath } from 'node:url';
+import { localHandler } from './api/projects.js';
+import { createLocalStore } from './local-store.mjs';
 
 const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.webp': 'image/webp', '.pdf': 'application/pdf' };
 const port = Number(process.env.PORT || 3000);
 const origin = `http://localhost:${port}`;
+const databasePath = fileURLToPath(new URL('./.portfolio-local.sqlite', import.meta.url));
+const handle = localHandler(createLocalStore(databasePath), process.env.ADMIN_PASSWORD || '7507115');
 http.createServer(async (request, response) => {
   const url = new URL(request.url, origin);
+  if (request.headers.host !== `localhost:${port}` || url.origin !== origin) {
+    response.writeHead(403).end('Use the localhost URL printed by the server.');
+    return;
+  }
   try {
     if (url.pathname === '/api/projects') {
       const body = request.method === 'POST' ? request : undefined;
-      const result = await api.fetch(new Request(url, {
+      const result = await handle(new Request(url, {
         method: request.method, headers: request.headers, body, duplex: 'half'
       }));
       response.writeHead(result.status, Object.fromEntries(result.headers));

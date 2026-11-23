@@ -1,29 +1,36 @@
-# Muhammad Shafique Portfolio
+# Muhammad Shafique Portfolio V2
 
-Responsive portfolio with 18 starter projects, category filters, search, a CV download, and a password-protected project dashboard at `/admin`. The dashboard can add projects, edit their details, and hide or republish them. Projects can use an optional hosted cover image.
+A responsive portfolio with 18 projects, category filters, search, a CV download, and direct WhatsApp, phone, email, and LinkedIn links. The dashboard at `/admin` can add projects, edit their details, and hide or republish them.
 
-## Preview locally
+## Run V2 on your computer
 
 1. Install Node.js 24.
-2. Open a terminal in the extracted folder and run `npm run dev`.
-3. Open [http://localhost:3000](http://localhost:3000). The public portfolio runs with the starter projects immediately.
-4. To test the dashboard locally, copy `.env.example` to `.env.local`, set the values described below, then restart the server. Use a separate Redis database if you want a test environment that does not change your published projects.
+2. Open the extracted folder in a terminal and run `npm run dev`.
+3. Open [the portfolio](http://localhost:3000) or [the admin page](http://localhost:3000/admin).
+4. The temporary local password is the last seven digits of the phone number displayed on the portfolio. Local project edits persist in `.portfolio-local.sqlite` and use no Upstash credentials. Local data stays on the computer running the preview.
 
-## Deploy from GitHub to Vercel
+## Update the GitHub and Vercel deployment
 
-1. Extract the ZIP. Upload the **contents** of the extracted folder to a GitHub repository, including `vercel.json`, `api/`, and `public/`. Review the contact details in the included CV before making the repository public.
-2. Create an [Upstash Redis](https://console.upstash.com/) database for this portfolio. From its REST API tab, copy the REST URL and token with write access.
-3. In Vercel, add a project and import the GitHub repository. Use the root folder, the **Other** framework preset, and no custom build command. The output directory is set to `public` in the included configuration.
-4. Set these three Vercel environment variables for Production before deploying. If the site is already deployed, redeploy after adding them.
+1. Replace the previous source files in the GitHub repository with the extracted contents, including `api/`, `public/`, and `vercel.json`.
+2. Keep the same Upstash Redis database to preserve any existing production edits. If you have no database yet, create one in [Upstash](https://console.upstash.com/) and copy its HTTPS REST URL and REST token with write access.
+3. Open the Vercel project. Use the **Other** framework preset and the repository folder containing `package.json` as the root. The included config sets `public` as the output directory.
+4. Under **Settings → Environment Variables**, add these values for the environment you deploy to.
 
 | Variable | Value |
 | --- | --- |
-| `UPSTASH_REDIS_REST_URL` | Your Upstash Redis HTTPS REST URL |
-| `UPSTASH_REDIS_REST_TOKEN` | Your Upstash Redis REST write token |
-| `ADMIN_PASSWORD` | A unique password of at least 16 characters |
+| `UPSTASH_REDIS_REST_URL` | Upstash HTTPS REST URL |
+| `UPSTASH_REDIS_REST_TOKEN` | Upstash REST token with write access |
+| `ADMIN_PASSWORD` | A unique production password with at least 16 characters |
 
-5. Open `https://YOUR-PROJECT.vercel.app/admin` and sign in. Add a project or select **Edit** next to an existing one. Save the project, then reload the public portfolio to see the update.
+   V2 also recognises the matching `KV_REST_API_URL` and `KV_REST_API_TOKEN` pair from an existing Vercel integration. Keep secrets in Vercel or in an ignored local `.env.local` file.
 
-Keep your password and Redis credentials in Vercel environment variables or your ignored local `.env.local` file. Saved projects live in Redis, so keep the same production database connected across deployments. The project links and labels are based on the supplied portfolio.
+5. Deploy the new commit after any environment changes. Open `https://YOUR-PROJECT.vercel.app/admin` and sign in with your production password. Save a project and reload the public portfolio to check the result.
 
-[Vercel project configuration](https://vercel.com/docs/project-configuration/vercel-json) · [Vercel Node.js Functions](https://vercel.com/docs/functions/runtimes/node-js) · [Upstash Redis REST API](https://upstash.com/docs/redis/features/restapi)
+## If the admin reports a database error
+
+- **Missing setup**. Check that the URL and write token are a matching pair and selected for the deployment environment you opened. Redeploy after saving changes.
+- **Credentials rejected**. Copy the REST token from the same Upstash database as the URL and verify that the token has write access.
+- **Connection unavailable or rate limited**. Check the database status and usage in Upstash and the function logs in Vercel.
+- **Missing API route**. Verify that GitHub contains the root `api/projects.js` file and that Vercel is deploying from that root.
+
+[Vercel environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) · [Upstash REST API](https://upstash.com/docs/redis/features/restapi)

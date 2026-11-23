@@ -5,7 +5,6 @@ const result = document.querySelector('#results');
 const template = document.querySelector('#project-template');
 let projects = [];
 let category = '';
-const hues = {'E-Commerce': 86, 'Real Estate': 167, 'Local Services': 193, 'Corporate & Legal': 35, 'Blogging & Tools': 255};
 
 function renderProjects() {
   const query = search.value.trim().toLowerCase();
@@ -23,14 +22,13 @@ function renderProjects() {
     card.querySelector('.category').textContent = project.category;
     card.querySelector('.description').textContent = project.description;
     const art = card.querySelector('.card-art');
-    art.style.setProperty('--hue', hues[project.category] ?? 110);
-    const monogram = art.querySelector('.monogram');
-    monogram.textContent = project.name.split(/\s+/).slice(0, 2).map(word => Array.from(word)[0]).join('').toUpperCase();
+    const coverType = art.querySelector('.cover-type');
+    coverType.textContent = project.name;
     if (project.image) {
       const image = document.createElement('img');
       image.alt = '';
       image.loading = 'lazy';
-      image.addEventListener('load', () => { monogram.hidden = true; });
+      image.addEventListener('load', () => { coverType.hidden = true; });
       image.addEventListener('error', () => image.remove());
       image.src = project.image;
       art.prepend(image);
