@@ -22,13 +22,14 @@ function renderProjects() {
     card.querySelector('.category').textContent = project.category;
     card.querySelector('.description').textContent = project.description;
     const art = card.querySelector('.card-art');
-    const coverType = art.querySelector('.cover-type');
-    coverType.textContent = project.name;
+    const coverMark = art.querySelector('.cover-mark');
+    coverMark.textContent = project.name.split(/\s+/u).slice(0, 2)
+      .map(word => Array.from(word)[0]).join('').toUpperCase();
     if (project.image) {
       const image = document.createElement('img');
       image.alt = '';
       image.loading = 'lazy';
-      image.addEventListener('load', () => { coverType.hidden = true; });
+      image.addEventListener('load', () => { coverMark.hidden = true; });
       image.addEventListener('error', () => image.remove());
       image.src = project.image;
       art.prepend(image);

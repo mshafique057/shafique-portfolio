@@ -1,8 +1,8 @@
-# Muhammad Shafique Portfolio V2
+# Muhammad Shafique Portfolio V3
 
 A responsive portfolio with 18 projects, category filters, search, a CV download, and direct WhatsApp, phone, email, and LinkedIn links. The dashboard at `/admin` can add projects, edit their details, and hide or republish them.
 
-## Run V2 on your computer
+## Run V3 on your computer
 
 1. Install Node.js 24.
 2. Open the extracted folder in a terminal and run `npm run dev`.
@@ -22,7 +22,7 @@ A responsive portfolio with 18 projects, category filters, search, a CV download
 | `UPSTASH_REDIS_REST_TOKEN` | Upstash REST token with write access |
 | `ADMIN_PASSWORD` | A unique production password with at least 16 characters |
 
-   V2 also recognises the matching `KV_REST_API_URL` and `KV_REST_API_TOKEN` pair from an existing Vercel integration. Keep secrets in Vercel or in an ignored local `.env.local` file.
+   V3 also recognises the matching `KV_REST_API_URL` and `KV_REST_API_TOKEN` pair from an existing Vercel integration. Keep secrets in Vercel or in an ignored local `.env.local` file.
 
 5. Deploy the new commit after any environment changes. Open `https://YOUR-PROJECT.vercel.app/admin` and sign in with your production password. Save a project and reload the public portfolio to check the result.
 

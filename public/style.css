@@ -42,11 +42,6 @@ h1,h2 { font:400 clamp(2.8rem,5.5vw,5.5rem)/.99 var(--serif);letter-spacing:-.05
 h1 { font-size:clamp(3.3rem,8vw,8.1rem) }
 h1 em,h2 em,h2 span { color:var(--blue) }
 .intro { color:var(--muted);font-size:1.12rem;max-width:31rem;margin-block:24px 30px }
-.portrait { position:relative;background:#dfd6c7;overflow:hidden;border-radius:165px 165px 16px 16px;animation:enter .65s .12s both }
-.portrait img { aspect-ratio:1.04;object-fit:cover;object-position:50% 40% }
-.portrait figcaption { display:flex;flex-direction:column;gap:2px;padding:14px 20px;background:#15162b;color:#fff;font-size:.8rem }
-.portrait figcaption strong { font-size:.95rem }
-.portrait figcaption span { color:#dedff2 }
 .section { padding-block:76px }
 .work { background:#efeee9;border-block:1px solid var(--line) }
 .section-header { display:flex;justify-content:space-between;align-items:end;gap:16px }
@@ -69,7 +64,6 @@ input,textarea { width:100%;min-width:0;padding:10px 13px;border:1px solid #aaa9
 .card-art::before { left:-35%;top:-64% }
 .card-art::after { right:-35%;bottom:-64% }
 .card-art img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1 }
-.cover-type { font:italic 400 clamp(1.45rem,2.6vw,2.4rem)/1 var(--serif);letter-spacing:-.04em;max-width:18ch;overflow-wrap:anywhere }
 .card:nth-child(6n+1) .card-art { --cover:#25204a;--cover-ink:#f1e1fc }
 .card:nth-child(6n+2) .card-art { --cover:#eed9cb;--cover-ink:#542a23 }
 .card:nth-child(6n+3) .card-art { --cover:#d9e5df;--cover-ink:#1d4937 }
@@ -116,7 +110,6 @@ input,textarea { width:100%;min-width:0;padding:10px 13px;border:1px solid #aaa9
 @media(max-width:950px) {
   .wrap { width:calc(100% - 48px) }
   .projects { grid-template-columns:repeat(2,minmax(0,1fr)) }
-  .portrait { border-radius:100px 100px 14px 14px }
 }
 @media(max-width:620px) {
   .wrap { width:calc(100% - 32px) }
@@ -127,9 +120,7 @@ input,textarea { width:100%;min-width:0;padding:10px 13px;border:1px solid #aaa9
   .brand span { width:31px;height:31px;font-size:.72rem }
   .hero,.about,.contact-grid { grid-template-columns:1fr;gap:24px }
   .hero,.section { padding-block:44px }
-  .portrait { width:min(100%,370px);justify-self:center }
   .projects,.row { grid-template-columns:1fr }
-  .cover-type { font-size:2rem }
   .section-header { flex-direction:column;align-items:start;gap:8px }
   .search { width:100% }
   .search input { min-width:0 }
@@ -137,3 +128,102 @@ input,textarea { width:100%;min-width:0;padding:10px 13px;border:1px solid #aaa9
 @media(prefers-reduced-motion:reduce) {
   *,*::before,*::after { animation:none!important;transition:none!important }
 }
+
+/* Public portfolio */
+:root {
+  --ink:#142923;
+  --muted:#4c625a;
+  --paper:#fbfdfc;
+  --line:#dce7e1;
+  --blue:#126953;
+}
+.top { background:#fff }
+.primary:hover { background:#0e5644 }
+.outline:hover,.nav-cta:hover { background:#e8f4ed }
+.hero {
+  position:relative;
+  isolation:isolate;
+  display:flex;
+  flex-direction:column;
+  gap:23px;
+  min-height:540px;
+  text-align:center;
+  justify-content:center;
+  padding:58px 20px 65px;
+}
+.hero::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:16px 0;
+  background:
+    radial-gradient(ellipse at 50% 38%,#fbfdfc 22%,transparent 70%),
+    radial-gradient(circle,#d9e6df 1px,transparent 1.5px) center/20px 20px;
+  mask-image:radial-gradient(ellipse,black 25%,transparent 75%);
+  pointer-events:none;
+}
+.hero-portrait {
+  width:126px;
+  height:126px;
+  padding:5px;
+  border-radius:50%;
+  border:1px solid #a9c8ba;
+  background:white;
+  box-shadow:0 12px 26px #1235231b;
+  animation:enter .5s both;
+}
+.hero-portrait img { height:100%;object-fit:cover;border-radius:50% }
+.hero h1 {
+  font:750 clamp(2.55rem,6.6vw,5.35rem)/1.02 system-ui,sans-serif;
+  letter-spacing:-.075em;
+}
+.hero h1 span {
+  display:block;
+  margin-top:9px;
+  color:#147761;
+  font:400 italic clamp(2.2rem,5.8vw,4.85rem)/1.05 var(--serif);
+  letter-spacing:-.055em;
+}
+.hero .intro { margin:17px auto 23px;max-width:34rem }
+.hero .actions { justify-content:center }
+.hero-links { display:flex;justify-content:center;gap:21px;margin-top:15px;color:var(--muted);font-size:.85rem }
+.hero-links a:hover { text-decoration:underline;text-underline-offset:4px }
+.work { background:#f1f7f3 }
+.work .section-header h2 { font-family:system-ui,sans-serif;font-weight:720;font-size:clamp(2.2rem,5vw,4rem) }
+.work .toolbar { padding:12px;border:1px solid var(--line);background:#fbfdfc;border-radius:14px }
+.filters button,.secondary { border-color:#d4e3dc }
+.filters button[aria-pressed=true] { background:#143c30;border-color:#143c30 }
+.projects { gap:22px }
+.card-link { padding:9px;border-color:#dce7e1;border-radius:18px }
+.card-art {
+  min-height:165px;
+  height:clamp(165px,18vw,228px);
+  border-radius:11px;
+  background:
+    radial-gradient(ellipse at 50% 120%,#ffffff8c,transparent 73%),
+    var(--cover,#deebe6);
+  color:var(--cover-ink,#20473b);
+}
+.card-art::before,.card-art::after { width:64%;height:116%;transform:rotate(-34deg);opacity:.27 }
+.card-art::before { left:-12%;top:-52% }
+.card-art::after { right:-12%;bottom:-52% }
+.cover-mark { font:italic 400 clamp(3.7rem,8vw,6.25rem)/.9 var(--serif);letter-spacing:-.1em }
+.card:nth-child(6n+1) .card-art { --cover:#a8cabd;--cover-ink:#123d32 }
+.card:nth-child(6n+2) .card-art { --cover:#ead5c4;--cover-ink:#693b2c }
+.card:nth-child(6n+3) .card-art { --cover:#dfdfb9;--cover-ink:#4a532b }
+.card:nth-child(6n+4) .card-art { --cover:#d9e0f2;--cover-ink:#334475 }
+.card:nth-child(6n+5) .card-art { --cover:#ead9e2;--cover-ink:#624361 }
+.card:nth-child(6n+6) .card-art { --cover:#b9d9dc;--cover-ink:#245055 }
+.card-copy { padding:15px 13px 9px }
+.tags span { background:#edf5f0 }
+.contact,.footer { background:#142c23 }
+.contact .eyebrow,.contact h2 span { color:#b1dec8 }
+.contact .primary { background:#e2f7ec;color:#153629 }
+@media(max-width:620px) {
+  .hero { min-height:0;padding:42px 0 48px;gap:19px }
+  .hero-portrait { width:103px;height:103px }
+  .hero .intro { font-size:1rem }
+  .hero::before { inset:0 }
+  .work .toolbar { padding:9px }
+}
+
