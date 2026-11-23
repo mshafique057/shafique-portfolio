@@ -9,21 +9,35 @@
 <link rel="stylesheet" href="/style.css">
 <script type="module" src="/site.js"></script>
 </head>
-<body>
+<body class="portfolio-page">
 <a class="skip" href="#main">Skip to content</a>
-<header class="top"><div class="wrap nav">
-<a class="brand" href="/"><span>MS</span> Muhammad Shafique</a>
-<nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-<a class="button nav-cta" href="https://wa.me/923007507115" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
-</div></header>
+<header class="profile-rail" aria-label="Site header">
+  <a class="rail-profile" href="#home">
+    <img src="/portrait.webp" width="1050" height="1050" alt="">
+    <span><strong>Muhammad Shafique</strong><small>Web Developer</small></span>
+  </a>
+  <button id="menu-toggle" class="button outline menu-toggle" type="button" aria-controls="rail-panel" aria-expanded="false" hidden>Menu</button>
+  <div class="rail-panel" id="rail-panel">
+    <nav class="rail-nav" aria-label="Main navigation">
+      <a href="#home" aria-current="location">Home</a>
+      <a href="#work">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="/Muhammad-Shafique-CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="rail-links">
+      <a href="https://wa.me/923007507115" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+      <a href="https://www.linkedin.com/in/muhammad-shafique-webdev/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    </div>
+  </div>
+</header>
 <main id="main">
-<section class="hero wrap">
-<div class="hero-portrait"><img src="/portrait.webp" width="1050" height="1050" alt="Muhammad Shafique" fetchpriority="high"></div>
+<section class="hero wrap" id="home">
 <div class="hero-copy">
 <h1>Muhammad Shafique<span>Web Developer</span></h1>
 <p class="intro">I build WordPress websites, WooCommerce stores, and custom PHP applications, and help businesses keep them running after launch.</p>
 <div class="actions"><a class="button primary" href="#work">View my work <span aria-hidden="true">↓</span></a><a class="button outline" href="/Muhammad-Shafique-CV.pdf" download>Download CV</a></div>
-<div class="hero-links"><a href="https://www.linkedin.com/in/muhammad-shafique-webdev/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:engr.shafiq057@gmail.com">Email ↗</a></div>
+<div class="hero-links"><a href="#contact">Get in touch ↗</a></div>
 </div>
 
 </section>
