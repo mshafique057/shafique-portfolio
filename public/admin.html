@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Manage work | Muhammad Shafique</title>
+<link rel="stylesheet" href="/style.css">
+<script type="module" src="/admin.js"></script>
+</head>
+<body>
+<header class="top"><div class="wrap nav"><a class="brand" href="/"><span>MS</span> Muhammad Shafique</a><a href="/">View portfolio ↗</a></div></header>
+<main class="wrap section admin-main">
+<div class="admin-head"><h1 class="admin-title">Manage work</h1><button id="logout" class="secondary" hidden>Sign out</button></div>
+<p id="status" class="status" role="status"></p>
+<section id="login" class="panel" hidden>
+<form id="login-form">
+<label>Admin password<input name="password" type="password" autocomplete="current-password" required></label>
+<div><button class="button primary">Sign in</button></div>
+</form>
+</section>
+<div id="dashboard" hidden>
+<section class="panel">
+<form id="editor">
+<h2 id="editor-title">Add a project</h2>
+<div class="row">
+<label>Project name<input name="name" maxlength="100" required></label>
+<label>Category<input name="category" maxlength="50" list="categories" required></label>
+<datalist id="categories"></datalist>
+</div>
+<div class="row">
+<label>Website URL<input name="url" type="url" maxlength="1200" placeholder="https://example.com/" required></label>
+<label>Cover image URL (optional)<input name="image" type="url" maxlength="1200" placeholder="https://example.com/cover.jpg"></label>
+</div>
+<label>Tags (comma-separated)<input name="tags" maxlength="250"></label>
+<label>Description (optional)<textarea name="description" maxlength="600" rows="3"></textarea></label>
+<label class="check"><input name="hidden" type="checkbox">Hide from public portfolio</label>
+<div class="actions"><button class="button primary">Save project</button><button id="cancel" class="secondary" type="button" hidden>Cancel edit</button></div>
+<p id="save-status" class="status" role="status"></p>
+</form>
+</section>
+<section class="panel"><h2 class="admin-list-title">Your projects</h2><ul id="admin-list" class="admin-list"></ul></section>
+</div>
+</main>
+</body>
+</html>

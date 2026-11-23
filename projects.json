@@ -1,0 +1,254 @@
+[
+  {
+    "id": "big-shotter",
+    "name": "Big Shotter Fireworks",
+    "url": "https://big-shotter-fireworks.co.uk/",
+    "category": "E-Commerce",
+    "tags": [
+      "WooCommerce",
+      "EPOS & Slynk",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "big-shotter-wholesale",
+    "name": "Big Shotter Wholesale",
+    "url": "https://big-shotter-fireworks-wholesale.co.uk/",
+    "category": "E-Commerce",
+    "tags": [
+      "B2B Store",
+      "WooCommerce",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "softbed",
+    "name": "Soft Bed Mattress",
+    "url": "https://softbedmattress.co.uk/",
+    "category": "E-Commerce",
+    "tags": [
+      "WooCommerce",
+      "Variations",
+      "Updates"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "reborndoll",
+    "name": "Reborn Doll Shop",
+    "url": "https://reborndollshop.co.uk/",
+    "category": "E-Commerce",
+    "tags": [
+      "E-Commerce",
+      "Content",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "spicydelight",
+    "name": "Spicy Delight Ltd",
+    "url": "https://spicydelightltd.co.uk/",
+    "category": "E-Commerce",
+    "tags": [
+      "WordPress",
+      "Local SEO",
+      "Updates"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "laptopsjet",
+    "name": "LaptopsJet",
+    "url": "https://laptopsjet.com/",
+    "category": "E-Commerce",
+    "tags": [
+      "E-Commerce",
+      "Catalog",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "majesticmeat",
+    "name": "Majestic Meat",
+    "url": "https://majesticmeat.co.uk/",
+    "category": "E-Commerce",
+    "tags": [
+      "WordPress",
+      "Products",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "cinchdomains",
+    "name": "Cinch Domains",
+    "url": "https://cinchdomains.com/",
+    "category": "E-Commerce",
+    "tags": [
+      "WooCommerce",
+      "Products",
+      "Updates"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "sharpesauctions",
+    "name": "Sharpes Auctions",
+    "url": "https://www.sharpesauctions.co.uk/",
+    "category": "Real Estate",
+    "tags": [
+      "Auctions",
+      "SEO",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "lbre",
+    "name": "LBRE Property Portal",
+    "url": "https://lbre.co.uk/",
+    "category": "Real Estate",
+    "tags": [
+      "Real Estate",
+      "Content",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "pckey",
+    "name": "PCKey Callout",
+    "url": "https://pckey-callout.co.uk/",
+    "category": "Local Services",
+    "tags": [
+      "WordPress",
+      "Redesign",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "pimzenspa",
+    "name": "Pim Zen Spa Bradford",
+    "url": "https://pimzenspa2017.co.uk/",
+    "category": "Local Services",
+    "tags": [
+      "WordPress",
+      "SEO",
+      "Updates"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "munichchauffeur",
+    "name": "My Munich Chauffeur",
+    "url": "https://mymunichchauffeur.com/",
+    "category": "Local Services",
+    "tags": [
+      "Booking Site",
+      "Content",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "cpcert",
+    "name": "CPCert",
+    "url": "https://cpcert.co.uk/",
+    "category": "Local Services",
+    "tags": [
+      "Business Site",
+      "SEO",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "hayatengineering",
+    "name": "Hayat Engineering Works",
+    "url": "https://hayatengineeringworks.com/services/",
+    "category": "Corporate & Legal",
+    "tags": [
+      "Corporate",
+      "Services",
+      "Updates"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "blackstone",
+    "name": "Blackstone Legal",
+    "url": "https://blackstone-legal.co.uk/",
+    "category": "Corporate & Legal",
+    "tags": [
+      "Law Firm",
+      "WordPress",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "makkahcentre",
+    "name": "Makkah Centre",
+    "url": "https://makkahcentre.co.uk/",
+    "category": "Corporate & Legal",
+    "tags": [
+      "Community",
+      "WordPress",
+      "Maintenance"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  },
+  {
+    "id": "vanvoltpro",
+    "name": "Van Volt Pro",
+    "url": "https://vanvoltpro.com/",
+    "category": "Blogging & Tools",
+    "tags": [
+      "GeneratePress",
+      "16+ Calculators",
+      "SEO & GA4"
+    ],
+    "description": "",
+    "image": "",
+    "hidden": false
+  }
+]

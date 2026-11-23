@@ -1,0 +1,7 @@
+{
+  "name": "muhammad-shafique-portfolio",
+  "private": true,
+  "type": "module",
+  "engines": {"node": "24.x"},
+  "scripts": {"dev": "node --env-file-if-exists=.env.local dev.mjs"}
+}
